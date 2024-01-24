@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewLicenseWizard">
+		<item value="Outside the US, Mexico, or Canada" key="OneStep_State"/>
+		<item value="Save Mrkalja 9" key="OneStep_AddressLine1"/>
+		<item value="Tanja" key="OneStep_First_Name"/>
+		<item value="" key="OneStep_AddressLine2"/>
+		<item value="+38766738673" key="OneStep_Tel_Number"/>
+		<item value="" key="OneStep_AddressLine3"/>
+		<item value="Banja Luka" key="OneStep_City"/>
+		<item value="Popovic" key="OneStep_Last_Name"/>
+		<item value="78000" key="OneStep_Zip"/>
+		<item value="tanja.popovic11@gmail.com" key="OneStep_Email"/>
+		<item value="true" key="OneStep_GDPR"/>
+		<item value="Bosnia and Herzegovina" key="OneStep_Other_Region"/>
+		<item value="RTRK" key="OneStep_Company"/>
+		<item value="" key="OneStep_Job_Title"/>
+		<item value="BOSNIA AND HERZEGOVINA" key="OneStep_Country"/>
+	</section>
+</section>

@@ -1,0 +1,11 @@
+/*****************************************************************************
+ * main.h
+ *****************************************************************************/
+
+#ifndef __MAIN_H__
+#define __MAIN_H__
+
+void delay(int * input_signal, int * output_signal, unsigned int signal_length);
+void echo(int * input_signal, int * output_signal, unsigned int signal_lenght);
+void compressor(int * input_signal, int * output_signal, unsigned int signal_lenght);
+#endif /* __MAIN_H__ */

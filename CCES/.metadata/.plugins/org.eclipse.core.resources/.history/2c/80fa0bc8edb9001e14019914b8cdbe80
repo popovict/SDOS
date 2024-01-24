@@ -1,0 +1,10 @@
+/*****************************************************************************
+ * main4.h
+ *****************************************************************************/
+
+#ifndef __MAIN_H__
+#define __MAIN_H__
+
+/* Add your custom header content here */
+void delay(int * input_signal, int * output_signal, int signal_length);
+#endif /* __MAIN_H__ */

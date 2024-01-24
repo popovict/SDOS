@@ -1,0 +1,190 @@
+!SESSION 2024-01-22 18:49:27.637 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-22 18:50:47.456
+!MESSAGE 2024-01-22 18:50:47, 432 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-22 18:50:47.457
+!MESSAGE 2024-01-22 18:50:47, 457 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-22 18:50:57.527
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-22 18:50:57.534
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-22 18:50:57.534
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-22 19:18:17.577
+!MESSAGE Indexed 'Guitar Effects SDOS 2024' (0 sources, 0 headers) in 0.003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-22 19:18:19.513
+!MESSAGE Indexed 'Guitar Effects SDOS 2024' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-22 19:18:30.397
+!MESSAGE Indexed 'Guitar Effects SDOS 2024' (4 sources, 21 headers) in 1.48 sec: 1,629 declarations; 3,526 references; 0 unresolved inclusions; 2 syntax errors; 14 unresolved names (0.27%)
+!SESSION 2024-01-23 12:09:19.810 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-23 12:10:04.111
+!MESSAGE 2024-01-23 12:10:04, 106 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-23 12:10:04.131
+!MESSAGE 2024-01-23 12:10:04, 130 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 12:10:34.031
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 12:10:34.038
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 12:10:34.039
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+!SESSION 2024-01-23 15:37:32.221 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-23 15:37:48.746
+!MESSAGE 2024-01-23 15:37:48, 724 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-23 15:37:48.773
+!MESSAGE 2024-01-23 15:37:48, 772 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 15:38:41.324
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 15:38:41.331
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-23 15:38:41.332
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+!SESSION 2024-01-24 12:48:23.492 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 12:48:29.574
+!MESSAGE 2024-01-24 12:48:29, 570 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 12:48:29.589
+!MESSAGE 2024-01-24 12:48:29, 588 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 12:48:53.581
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 12:48:53.589
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 12:48:53.590
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 1 0 2024-01-24 17:20:42.164
+!MESSAGE A CrossCore Embedded Studio session is already running.  This session must be terminated before launching a new session.
+
+!ENTRY com.analog.crosscore.debug 4 0 2024-01-24 17:59:27.352
+!MESSAGE java.util.concurrent.TimeoutException while shutting down CCES debugger launch com.analog.crosscore.debug.launch.CustomLaunch@a971c2
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-01-24 17:59:27.936
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.launch.CustomLaunchBase$2$1$1
+!SESSION 2024-01-24 19:40:14.361 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 19:40:20.286
+!MESSAGE 2024-01-24 19:40:20, 282 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 19:40:20.301
+!MESSAGE 2024-01-24 19:40:20, 299 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 19:40:41.758
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 19:40:41.768
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 19:40:41.769
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 1 0 2024-01-24 19:49:43.527
+!MESSAGE A CrossCore Embedded Studio session is already running.  This session must be terminated before launching a new session.
+
+!ENTRY com.analog.crosscore.debug 1 0 2024-01-24 19:54:04.063
+!MESSAGE A CrossCore Embedded Studio session is already running.  This session must be terminated before launching a new session.
+
+!ENTRY com.analog.crosscore.debug 4 0 2024-01-24 20:19:11.704
+!MESSAGE java.util.concurrent.TimeoutException while shutting down CCES debugger launch com.analog.crosscore.debug.launch.CustomLaunch@1dfd204
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-01-24 20:19:12.227
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.launch.CustomLaunchBase$2$1$1
+!SESSION 2024-01-24 20:19:09.607 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 20:19:18.993
+!MESSAGE 2024-01-24 20:19:18, 989 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-24 20:19:18.994
+!MESSAGE 2024-01-24 20:19:18, 994 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 20:19:28.222
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 20:19:28.229
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-24 20:19:28.230
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.system.components 4 0 2024-01-24 20:19:32.995
+!MESSAGE 2024-01-24 20:19:32, 995 [Thread: Worker-3: Checking Add-ins] ERROR - Invalid Add-in version: 
+
+
+!ENTRY com.analog.crosscore.system.components 4 0 2024-01-24 20:19:33.003
+!MESSAGE 2024-01-24 20:19:33, 002 [Thread: Worker-3: Checking Add-ins] ERROR - Invalid Add-in version: 
+
+
+!ENTRY com.analog.crosscore.system.components.ui 2 0 2024-01-24 20:19:33.005
+!MESSAGE 2024-01-24 20:19:33, 005 [Thread: Worker-3: Checking Add-ins] WARN - Add-in "Startup Code/LDF (-1.-1.-1.-1)" installed in project "Guitar Effects SDOS 2024" is NOT found.
+
+
+!ENTRY com.analog.crosscore.system.components 4 0 2024-01-24 20:19:44.895
+!MESSAGE 2024-01-24 20:19:44, 895 [Thread: Worker-9: Checking Add-in status of project Guitar Effects SDOS 2024] ERROR - Invalid Add-in version: 
+
+
+!ENTRY com.analog.crosscore.debug 4 0 2024-01-24 21:36:56.804
+!MESSAGE java.util.concurrent.TimeoutException while shutting down CCES debugger launch com.analog.crosscore.debug.launch.CustomLaunch@1378756
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-01-24 21:36:57.243
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.launch.CustomLaunchBase$2$1$1
