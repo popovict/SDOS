@@ -3,13 +3,13 @@
 Repozitorijum se sastoji od programa napisanog korištenjem Python programskog jezika, koji služi za učitavanje audio fajlova sa ekstenzijom .wav, implementaciju audio efekata i primjenjivanje na učitani audio signal, te generisanje modifikovanog audio fajla (direktorijum Python). Audio efekti su po istom principu implementirani u C programskom jeziku korištenjem CrossCore Embedded Studio razvojnog okruženja, a program je namijenjen za ADSP-21489 platformu (direktorijum CCES). 
 
 ## Pregled osnovnih funkcionalnosti
-- Učitavanje .wav fajla i njegova konverzija u niz
+- Učitavanje .wav fajla i njegova konverzija u niz odmjeraka
 - Eksportovanje niza odmjeraka audio signala u header fajl koji će se u ključiti u CCES projekat
-- Implementacija audio efekata u Pythonu i generisanje .wav fajlova modifikovanih odmjeraka
+- Implementacija audio efekata u Pythonu i generisanje .wav fajlova na osnovu modifikovanih odmjeraka
 - Implementacija audio efekata u C programskom jeziku
 - Eksportovanje modifikovanih signala u tekstualne datoteke u C programskom jeziku
 - Čitanje tekstualnih datoteka i generisanje audio fajlova u Pythonu.
-
+U Python direktorijumu su zbog bolje preglednosti objedinjeni .wav fajlovi generisani unutar Pythona (Python wav files direktorijum), dok su .wav fajlovi generisani na osnovu tekstualnih datoteka smješteni u direktorijum C wav files. U direktorijumu Txt audio samples se nalaze tekstualne datoteke generenisane iz projekta unutar CCESa.
 ## Način pokretanja programa
   Program u Pythonu se pokreće standardno korištenjem sljedeće komande:
 ```
