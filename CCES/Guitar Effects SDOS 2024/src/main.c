@@ -57,13 +57,12 @@ cycle_t start_count;
 cycle_t final_count;
 
 #pragma section("seg_sdram")
-static char extra_heap[512000];
+static char extra_heap[716800];
 
 int main(int argc, char *argv[])
 {
 
 	adi_initComponents();
-	//int * input_signal = NULL;
 	int * output_signal = NULL;
 	FILE * file;
 	int index = 0, uid = 999; /* arbitrary user id for heap */
@@ -74,41 +73,44 @@ int main(int argc, char *argv[])
 		printf("installation failed\n");
 		return 1;
 	}
-	//input_signal = (int *)heap_malloc(index, sound_wav_len*sizeof(int));
-	//if(input_signal == NULL)
-	//{
-	//	printf("Memory allocation of input_signal failed!");
-	//	return -1;
-	//}
+
 	output_signal = (int *)heap_malloc(index, sound_wav_len*sizeof(int));
 	if(output_signal == NULL)
 	{
 		printf("Memory allocation of output_signal failed!");
 		return -1;
 	}
-	//for(int i = 0; i < sound_wav_len; i++)
-		//input_signal[i] = sound_wav[i];
+
 	for(int i = 0; i < sound_wav_len; i++)
 		output_signal[i] = 0;
 
-	leds();
+	loading_bar();
 	START_CYCLE_COUNT(start_count);
+	// Uncomment one by one effect!
 	//delay(sound_wav, output_signal, sound_wav_len);
-	echo(sound_wav, output_signal, sound_wav_len);
+	//echo(sound_wav, output_signal, sound_wav_len);
+	//compressor(sound_wav, output_signal, sound_wav_len);
+	//noise_gate(sound_wav, output_signal, sound_wav_len);
+	//envelope_filter(sound_wav, output_signal, sound_wav_len);
+	//volume_pedal(sound_wav, output_signal, sound_wav_len);
+	//tape_saturation(sound_wav, output_signal, sound_wav_len);
+	//octave_up(sound_wav, output_signal, sound_wav_len);
+	//tremolo(sound_wav, output_signal, sound_wav_len);
+	//override(sound_wav, output_signal, sound_wav_len);
+	distorsion(sound_wav, output_signal, sound_wav_len);
 	STOP_CYCLE_COUNT(final_count, start_count);
-	PRINT_CYCLES("Broj ciklusa prilikom primjene Echo efekta: ", final_count);
+	PRINT_CYCLES("Broj ciklusa prilikom primjene Distorsion efekta: ", final_count);
 
-	file = fopen("delayed_signal.txt", "w");
-	if(file == NULL)
-	{
-		printf("Error while opening .txt file!");
-		return -1;
-	}
-	for(int i = 0; i< sound_wav_len; i++)
-		fprintf(file, "%d\n", output_signal[i]);
-	fclose(file);
-	printf("Writing is done!");
-	//heap_free(index, input_signal);
+	//file = fopen("distorsion_effect.txt", "w");
+	//if(file == NULL)
+	//{
+	//	printf("Error while opening .txt file!");
+	//	return -1;
+	//}
+	//for(int i = 0; i< sound_wav_len; i++)
+	//	fprintf(file, "%d\n", output_signal[i]);
+	//fclose(file);
+	//printf("Writing is done!");
 	heap_free(index, output_signal);
 
 	return 0;
@@ -143,10 +145,10 @@ void echo(const pm int * input_signal, int * output_signal, unsigned int signal_
 void compressor(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 1; i < signal_length; i++)
-		output_signal[i] = GAIN * input_signal[i] - (1 - GAIN) * output_signal[i - 1];
+		output_signal[i] = GAIN * input_signal[i] + (1 - GAIN) * output_signal[i - 1];
 }
 
-void noise_gate(int * input_signal, int * output_signal, unsigned int signal_length)
+void noise_gate(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 	{
@@ -157,25 +159,25 @@ void noise_gate(int * input_signal, int * output_signal, unsigned int signal_len
 	}
 }
 
-void volume_pedal(int * input_signal, int * output_signal, unsigned int signal_length)
+void volume_pedal(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = input_signal[i] * PEDAL_POSITION;
 }
 
-void tape_saturation(int * input_signal, int * output_signal, unsigned int signal_length)
+void tape_saturation(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = tanh(input_signal[i] * SATURATION_FACTOR);
 }
 
-void octave_up(int * input_signal, int * output_signal, unsigned int signal_length)
+void octave_up(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = input_signal[i] + GAIN * fabs(input_signal[i]);
 }
 
-void envelope_filter(int * input_signal, int * output_signal, unsigned int signal_length)
+void envelope_filter(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	float envelope = 0.0;
 	output_signal[0] = input_signal[0];
@@ -192,13 +194,13 @@ float m_function(int n)
 	return 1 + DEPTH * cosf(2.0 * M_PI * n * FLFO / SAMPLE_RATE);
 }
 
-void tremolo(int * input_signal, int * output_signal, unsigned int signal_length)
+void tremolo(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = input_signal[i] * m_function(i);
 }
 
-void distorsion(int * input_signal, int * output_signal, unsigned int signal_length)
+void distorsion(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 	{
@@ -212,7 +214,7 @@ void distorsion(int * input_signal, int * output_signal, unsigned int signal_len
 	}
 }
 
-void override(int * input_signal, int * output_signal, unsigned int signal_length)
+void override(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
 	for(int i = 0; i < signal_length; i++)
 	{
@@ -264,7 +266,7 @@ void delay_cycles(unsigned int delayCount)
 	while(delayCount--);
 }
 
-void leds(void)
+void loading_bar(void)
 {
 	initSRU();
 	//turn off LEDs

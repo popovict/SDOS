@@ -188,3 +188,32 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY org.eclipse.core.jobs 2 2 2024-01-24 21:36:57.243
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.launch.CustomLaunchBase$2$1$1
+!SESSION 2024-01-25 12:06:30.656 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-25 12:06:44.365
+!MESSAGE 2024-01-25 12:06:44, 343 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.11.1.0 w2210191
+
+
+!ENTRY com.analog.crosscore.core 1 0 2024-01-25 12:06:44.387
+!MESSAGE 2024-01-25 12:06:44, 386 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.11.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-25 12:08:15.561
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-25 12:08:15.570
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-01-25 12:08:15.571
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 4 0 2024-01-25 12:11:47.475
+!MESSAGE java.util.concurrent.TimeoutException while shutting down CCES debugger launch com.analog.crosscore.debug.launch.CustomLaunch@19fbe1d
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-01-25 12:11:47.991
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.launch.CustomLaunchBase$2$1$1

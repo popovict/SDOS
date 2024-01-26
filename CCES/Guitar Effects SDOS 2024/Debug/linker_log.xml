@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.11.1/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Wed Jan 24 19:53:29 2024
+<DOCUMENT gen_time='Fri Jan 26 14:51:06 2024
 '>
-<MSG id='043691A8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04094538' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -30,7 +30,7 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04367E68' mid='li3050' type='Informational' suppressed=''>
+<MSG id='040948B8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_error.doj](seg_pmco)
@@ -43,7 +43,7 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04368C68' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04094998' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -71,7 +71,7 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04368648' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04094A78' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
