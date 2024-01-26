@@ -7,7 +7,7 @@ Repozitorijum se sastoji od programa napisanog korištenjem Python programskog j
 - Eksportovanje niza odmjeraka audio signala u header fajl koji će se u ključiti u CCES projekat
 - Implementacija audio efekata u Pythonu i generisanje .wav fajlova modifikovanih odmjeraka
 - Implementacija audio efekata u C programskom jeziku
-- Eksportovanje modifikovanih signala u tekstualne datoteke it C programskog jezika
+- Eksportovanje modifikovanih signala u tekstualne datoteke u C programskom jeziku
 - Čitanje tekstualnih datoteka i generisanje audio fajlova u Pythonu.
 
 ## Način pokretanja programa
@@ -21,4 +21,4 @@ python -m pip install scipy
 python install ipython
 python install matplotlib
 ```
-Projekat razvijen unutar CCES razvojnog okruženja je potrebno otvoriti u istom, te izabrati Debug konfiguraciju za datu platformu (SHARC, ADSP-21489, EZ-KIT). Napomena je da se tekstualne datoteke za upisivanje obrađeni odmjeraka budu smješteni u Debug folder.
+Projekat razvijen unutar CCES razvojnog okruženja je potrebno otvoriti u istom, te izabrati Debug konfiguraciju za datu platformu (SHARC, ADSP-21489, EZ-KIT). Napomena je da se tekstualne datoteke za upisivanje obrađeni odmjeraka budu smješteni u Debug folder, te upisati odgovarajući naziv datoteke u fopen funkciji.
