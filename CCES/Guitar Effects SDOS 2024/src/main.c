@@ -56,14 +56,13 @@
 cycle_t start_count;
 cycle_t final_count;
 
-#pragma section("seg_sdram")
 static char extra_heap[716800];
 
 int main(int argc, char *argv[])
 {
 
 	adi_initComponents();
-	int * output_signal = NULL;
+	pm int * output_signal = NULL;
 	FILE * file;
 	int index = 0, uid = 999; /* arbitrary user id for heap */
 	/* Install extra_heap[] as a heap */
@@ -74,7 +73,7 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	output_signal = (int *)heap_malloc(index, sound_wav_len*sizeof(int));
+	output_signal = (pm int *)heap_malloc(index, sound_wav_len*sizeof(int));
 	if(output_signal == NULL)
 	{
 		printf("Memory allocation of output_signal failed!");
@@ -95,33 +94,35 @@ int main(int argc, char *argv[])
 	//volume_pedal(sound_wav, output_signal, sound_wav_len);
 	//tape_saturation(sound_wav, output_signal, sound_wav_len);
 	//octave_up(sound_wav, output_signal, sound_wav_len);
-	//tremolo(sound_wav, output_signal, sound_wav_len);
+	tremolo(sound_wav, output_signal, sound_wav_len);
 	//override(sound_wav, output_signal, sound_wav_len);
-	distorsion(sound_wav, output_signal, sound_wav_len);
+	//distorsion(sound_wav, output_signal, sound_wav_len);
 	STOP_CYCLE_COUNT(final_count, start_count);
-	PRINT_CYCLES("Broj ciklusa prilikom primjene Distorsion efekta: ", final_count);
-
-	//file = fopen("distorsion_effect.txt", "w");
-	//if(file == NULL)
-	//{
-	//	printf("Error while opening .txt file!");
-	//	return -1;
-	//}
-	//for(int i = 0; i< sound_wav_len; i++)
-	//	fprintf(file, "%d\n", output_signal[i]);
-	//fclose(file);
-	//printf("Writing is done!");
+	PRINT_CYCLES("Broj ciklusa prilikom primjene Echo efekta: ", final_count);
+	//Change the name of txt file!
+	file = fopen("distorsion_effect.txt", "w");
+	if(file == NULL)
+	{
+		printf("Error while opening .txt file!");
+		return -1;
+	}
+	for(int i = 0; i< sound_wav_len; i++)
+		fprintf(file, "%d\n", output_signal[i]);
+	fclose(file);
+	printf("Writing is done!");
 	heap_free(index, output_signal);
 
 	return 0;
 }
 
-void delay(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void delay(const pm int * restrict input_signal, int * output_signal, unsigned int signal_length)
 {
 	int delayed_value = 0;
+	//#pragma no_vectorization
+	#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 	{
-		if(i - DELAY_SAMPLES >= 0)
+		if(expected_true(i - DELAY_SAMPLES >= 0))
 			delayed_value = input_signal[i - DELAY_SAMPLES];
 		else
 			delayed_value = 0;
@@ -129,12 +130,13 @@ void delay(const pm int * input_signal, int * output_signal, unsigned int signal
 	}
 }
 
-void echo(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void echo(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
 	int delayed_value = 0;
+	#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 	{
-		if (i - DELAY_SAMPLES >= 0)
+		if (expected_true(i - DELAY_SAMPLES >= 0))
 			delayed_value = output_signal[i - DELAY_SAMPLES];
 		else
 			delayed_value = 0;
@@ -142,86 +144,131 @@ void echo(const pm int * input_signal, int * output_signal, unsigned int signal_
 	}
 }
 
-void compressor(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void compressor(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+	//#pragma SIMD_for
+	#pragma no_vectorization
 	for(int i = 1; i < signal_length; i++)
 		output_signal[i] = GAIN * input_signal[i] + (1 - GAIN) * output_signal[i - 1];
 }
 
-void noise_gate(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void noise_gate(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+	//#pragma SIMD_for
+	//#pragma no_vectorization
 	for(int i = 0; i < signal_length; i++)
 	{
-		if(fabs(input_signal[i]) >= THRESHOLD)
+		//if(fabs(input_signal[i]) >= THRESHOLD)
+		if(expected_false(fabs(input_signal[i]  - THRESHOLD) >= 0))
 			output_signal[i] = input_signal[i];
 		else
 			output_signal[i] = 0;
 	}
 }
 
-void volume_pedal(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void volume_pedal(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+	#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = input_signal[i] * PEDAL_POSITION;
 }
 
 void tape_saturation(const pm int * input_signal, int * output_signal, unsigned int signal_length)
 {
+	//#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = tanh(input_signal[i] * SATURATION_FACTOR);
 }
 
-void octave_up(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void octave_up(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+	//#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 		output_signal[i] = input_signal[i] + GAIN * fabs(input_signal[i]);
 }
 
-void envelope_filter(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void envelope_filter(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
 	float envelope = 0.0;
 	output_signal[0] = input_signal[0];
 
+	//#pragma SIMD_for
 	for(int i = 1; i < signal_length; i++)
 	{
 		envelope += ALPHA * (fabs(input_signal[i]) - envelope) * DT;
 		output_signal[i] = output_signal[i - 1] + envelope * DT * input_signal[i];
 	}
 }
-
-float m_function(int n)
+//float depth = 0.9;
+//int flfo = 5;
+//int samplerate = 44100;
+inline float m_function(int n)
 {
 	return 1 + DEPTH * cosf(2.0 * M_PI * n * FLFO / SAMPLE_RATE);
 }
 
-void tremolo(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void tremolo(const pm int *  restrict input_signal, pm int * restrict output_signal, dm unsigned int signal_length)
 {
+	#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
+	{
 		output_signal[i] = input_signal[i] * m_function(i);
+	}
 }
 
-void distorsion(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+//void tremolo(const pm int *  restrict input_signal, pm int * restrict output_signal, dm unsigned int signal_length)
+//{
+
+	//#pragma loop_unroll 1000
+	//#pragma loop_unroll 100
+	//#pragma loop_unroll 10
+//	for(int i = 0; i < signal_length; i+=2)
+//	{
+//		output_signal[i] = input_signal[i] * m_function(i);
+//		output_signal[i+1] = input_signal[i+1] * m_function(i+1);
+//	}
+//}
+
+void distorsion(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+
 	for(int i = 0; i < signal_length; i++)
 	{
 		int x = input_signal[i];
-		if(GI * x <= -1)
+		if(expected_false(GI * x <= -1))
+		//if(expected_false(GI * x + 1 <= 0))
 			output_signal[i] = - GO;
-		else if (GI * x >= -1 && GI * x < 1)
+		else if (expected_true(GI * x >= -1 && GI * x < 1))
+		//else if(expected_true(GI * x + 1 >= 0 && GI * x - 1 < 0))
 			output_signal[i] =(int)(GI * GO * x);
 		else
 			output_signal[i] = GO;
 	}
 }
+//void distorsion(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
+//{
+//
+//	for(int i = 0; i < signal_length; i++)
+//	{
+//		int x = input_signal[i];
+//		if(GI * x + 1 <= 0)
+//			output_signal[i] = - GO;
+//		else if(GI * x + 1 >= 0 && GI * x - 1 < 0)
+//			output_signal[i] =(int)(GI * GO * x);
+//		else
+//			output_signal[i] = GO;
+//	}
+//}
 
-void override(const pm int * input_signal, int * output_signal, unsigned int signal_length)
+void override(const pm int * restrict input_signal, int * restrict output_signal, unsigned int signal_length)
 {
+	#pragma SIMD_for
 	for(int i = 0; i < signal_length; i++)
 	{
 		int x = input_signal[i];
-		if(GI * x <= -1)
+		if(expected_false(GI * x <= -1))
 			output_signal[i] =(int)(- GO * 2/3);
-		else if (GI * x >= -1 && GI * x < 1)
+		else if (expected_true(GI * x >= -1 && GI * x < 1))
 			output_signal[i] = (int)(GO * (GO * x - pow(GI * x, 3)/3));
 		else
 			output_signal[i] = (int)(GO * 2/3);

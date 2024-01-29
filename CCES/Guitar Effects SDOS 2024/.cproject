@@ -30,7 +30,7 @@
 								<inputType id="assembler.input.1229472271" name="Assembler Source" superClass="assembler.input"/>
 							</tool>
 							<tool id="sharc.toolchain.compiler.1625902729" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler">
-								<option id="compiler.option.optimization.1695527698" name="Enable optimization (-O)" superClass="compiler.option.optimization" useByScannerDiscovery="false"/>
+								<option id="compiler.option.optimization.1695527698" name="Enable optimization (-O)" superClass="compiler.option.optimization" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="compiler.option.debugcode.260520695" name="Generate debug information (-g)" superClass="compiler.option.debugcode" useByScannerDiscovery="false"/>
 								<option id="compiler.option.proc.1793164649" name="-proc" superClass="compiler.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="compiler.option.sirevision.2142336047" name="-si-revision" superClass="compiler.option.sirevision" value=" 0.2" valueType="string"/>
@@ -219,4 +219,5 @@
 	</storageModule>
 	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.11.1/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Fri Jan 26 14:51:06 2024
+<DOCUMENT gen_time='Mon Jan 29 20:38:27 2024
 '>
-<MSG id='04094538' mid='li3050' type='Informational' suppressed=''>
+<MSG id='049F7A90' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -16,6 +16,7 @@
     libcc.dlb[lib_ldtof.doj](seg_pmco)
     libcc.dlb[strlen.doj](seg_pmco)
     libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[cosf_simd.doj](seg_pmco)
     libc.dlb[dispatched_handler_activate.doj](seg_pmco)
     libc.dlb[dispatched_handler_deactivate.doj](seg_pmco)
     libc.dlb[dispatched_handler_register.doj](seg_pmco)
@@ -30,10 +31,11 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='040948B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='049F7D30' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[cosf_simd.doj](seg_pmco)
     libc.dlb[fatal_error.doj](seg_pmco)
     libc.dlb[int_dispatcher_214xx.doj](seg_pmco)
     libc.dlb[isinff.doj](seg_pmco)
@@ -43,7 +45,7 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04094998' mid='li3050' type='Informational' suppressed=''>
+<MSG id='049F77F0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -57,6 +59,7 @@
     libcc.dlb[lib_ldtof.doj](seg_pmco)
     libcc.dlb[strlen.doj](seg_pmco)
     libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[cosf_simd.doj](seg_pmco)
     libc.dlb[dispatched_handler_activate.doj](seg_pmco)
     libc.dlb[dispatched_handler_deactivate.doj](seg_pmco)
     libc.dlb[dispatched_handler_register.doj](seg_pmco)
@@ -71,7 +74,7 @@
     libc.dlb[sinhf.doj](seg_pmco)
     libc.dlb[tanhf.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04094A78' mid='li3050' type='Informational' suppressed=''>
+<MSG id='049F69F0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -85,6 +88,7 @@
     libcc.dlb[lib_ldtof.doj](seg_pmco)
     libcc.dlb[strlen.doj](seg_pmco)
     libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[cosf_simd.doj](seg_pmco)
     libc.dlb[dispatched_handler_activate.doj](seg_pmco)
     libc.dlb[dispatched_handler_deactivate.doj](seg_pmco)
     libc.dlb[dispatched_handler_register.doj](seg_pmco)
