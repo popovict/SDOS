@@ -41,15 +41,18 @@
 #define DT 1/SAMPLE_RATE
 /******************************************************************************
  * Tremolo effect parameter
+ * Zasniva se na amplitudskoj modulaciji originalnog signala
  *****************************************************************************/
-#define DEPTH 0.9
-#define FLFO 5.0
+#define DEPTH 0.9 // Dubina amplitudske modulacije
+#define FLFO 5.0 // Frekvencija niskofrekvencijskog oscilatora (0,5-20Hz)
 #define M_PI 3.14159265358979323846
 /******************************************************************************
  * Override and Distorsion effect parametes
+ * Linearna karakteristika za nize amplitude, nelinearna za vise.
+ * Blazi prelazi kod Override, ostriji kod Distorsion efekta.
  *****************************************************************************/
-#define GI 0.005
-#define GO 2000.0
+#define GI 0.005 //Ulazno pojacanje
+#define GO 2000.0 //Izlazno pojacanje
 /******************************************************************************
  * Variables for code profiling
  *****************************************************************************/
@@ -90,17 +93,17 @@ int main(int argc, char *argv[])
 	//echo(sound_wav, output_signal, sound_wav_len);
 	//compressor(sound_wav, output_signal, sound_wav_len);
 	//noise_gate(sound_wav, output_signal, sound_wav_len);
-	//envelope_filter(sound_wav, output_signal, sound_wav_len);
+	envelope_filter(sound_wav, output_signal, sound_wav_len);
 	//volume_pedal(sound_wav, output_signal, sound_wav_len);
 	//tape_saturation(sound_wav, output_signal, sound_wav_len);
 	//octave_up(sound_wav, output_signal, sound_wav_len);
-	tremolo(sound_wav, output_signal, sound_wav_len);
+	//tremolo(sound_wav, output_signal, sound_wav_len);
 	//override(sound_wav, output_signal, sound_wav_len);
 	//distorsion(sound_wav, output_signal, sound_wav_len);
 	STOP_CYCLE_COUNT(final_count, start_count);
-	PRINT_CYCLES("Broj ciklusa prilikom primjene Echo efekta: ", final_count);
+	PRINT_CYCLES("Broj ciklusa prilikom primjene Envelope efekta: ", final_count);
 	//Change the name of txt file!
-	file = fopen("distorsion_effect.txt", "w");
+	file = fopen("envelope_filter.txt", "w");
 	if(file == NULL)
 	{
 		printf("Error while opening .txt file!");
